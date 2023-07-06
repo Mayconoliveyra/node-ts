@@ -1,3 +1,5 @@
-import { server } from "./Server/Server";
+import { server } from './Server';
 
-server.listen(3333, () => console.log("Backend iniciado na porta [3333]"));
+server.listen(process.env.PORT || 3333, () =>
+  console.log(`Back-end iniciado na porta ${process.env.PORT || 3333}.`),
+);
