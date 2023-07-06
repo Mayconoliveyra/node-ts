@@ -6,7 +6,8 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node-dev ./src/index.ts"
+    "start": "npx ts-node-dev ./src/index.ts",
+    "build": "npx tsc"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
