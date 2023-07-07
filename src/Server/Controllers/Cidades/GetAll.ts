@@ -9,6 +9,7 @@ interface IQueryProps {
   limit?: number;
   filter?: string;
 }
+
 export const getAllValidation = validation((getSchema) => ({
   query: getSchema<IQueryProps>(
     yup.object().shape({
