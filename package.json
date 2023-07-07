@@ -7,7 +7,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx ts-node-dev ./src/index.ts",
-    "build": "npx tsc",
+    "postinstall": "tsc",
+    "production": "pm2 start ./build/index.js --name node-ts",
     "test": "jest"
   },
   "dependencies": {
