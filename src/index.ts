@@ -8,10 +8,15 @@ const startServer = () => {
 };
 
 if (process.env.NODE_ENV !== 'dev') {
+  console.log('Rodando migrations');
+
   Knex.migrate
     .latest()
     .then(() => {
-      startServer();
+      Knex.seed
+        .run()
+        .then(() => startServer())
+        .catch(console.log);
     })
     .catch(console.log);
 } else {
