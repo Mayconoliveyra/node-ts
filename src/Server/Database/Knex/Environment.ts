@@ -14,6 +14,7 @@ export const development: Knex.Config = {
     directory: path.resolve(__dirname, '..', 'Seeds'),
   },
   pool: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     afterCreate: (connection: any, done: Function) => {
       connection.run('PRAGMA foreign_keys = ON');
       done();

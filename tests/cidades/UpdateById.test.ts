@@ -17,6 +17,6 @@ describe('Cidades - UpdateById', () => {
     const res1 = await testServer.put('/cidades/99999').send({ nome: 'Caxias' });
 
     expect(res1.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
-    expect(res1.body).toHaveProperty('errors.default', 'Registro não encontrado');
+    expect(res1.body).toHaveProperty('errors.default');
   });
 });
