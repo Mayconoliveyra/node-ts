@@ -1,15 +1,16 @@
 import { Router } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
+import { CidadesController } from '../../Controllers/Cidades';
+
 const router = Router();
 
-router.get('/', (req, res) => res.status(200).json('Olá dev'));
-router.get('/teste', (req, res) => res.status(StatusCodes.OK).json('Olá dev TESTE'));
+router.get('/', (req, res) => res.status(StatusCodes.OK).json('API TESTADA!.'));
 
-router.post('/post', (req, res) => {
-  console.log(req.body);
-
-  return res.status(StatusCodes.CREATED).json('Olá dev Post');
-});
+router.get('/cidades', CidadesController.getAllValidation, CidadesController.getAll);
+router.post('/cidades', CidadesController.createValidation, CidadesController.create);
+router.get('/cidades/:id', CidadesController.getByIdValidation, CidadesController.getById);
+router.put('/cidades/:id', CidadesController.updateByIdValidation, CidadesController.updateById);
+router.delete('/cidades/:id', CidadesController.deleteByIdValidation, CidadesController.deleteById);
 
 export { router };

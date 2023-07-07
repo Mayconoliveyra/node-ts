@@ -26,10 +26,11 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": [["module", "/react/"]],
+        "groups": [["module"], ["/Controllers/"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
-    "@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/ban-types": "off"
   }
 }
