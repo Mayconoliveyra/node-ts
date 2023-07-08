@@ -5,6 +5,13 @@ import { IUsuario } from '../../Models/Usuario';
 
 export const create = async (usuario: Omit<IUsuario, 'id'>): Promise<number | Error> => {
   try {
+    const usuarioFromDB = await Knex(ETableNames.usuario)
+      .select()
+      .where('email', '=', usuario.email)
+      .first();
+
+    if (usuarioFromDB) return new Error('E-mail já utilizado');
+
     const hashedPassword = await PasswordCrypto.hashPassword(usuario.senha);
 
     const [result] = await Knex(ETableNames.usuario)

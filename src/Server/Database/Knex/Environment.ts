@@ -12,7 +12,7 @@ export const development: Knex.Config = {
   connection: {
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT || 5432),
-    database: process.env.DATABASE_NAME,
+    database: `dev-${process.env.DATABASE_NAME}`,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     dateStrings: true,
@@ -24,11 +24,6 @@ export const development: Knex.Config = {
       return next();
     },
   },
-};
-
-export const test: Knex.Config = {
-  ...development,
-  connection: ':memory:',
 };
 
 export const production: Knex.Config = {
