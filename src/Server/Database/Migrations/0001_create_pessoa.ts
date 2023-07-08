@@ -13,6 +13,7 @@ export async function up(knex: Knex) {
         .bigInteger('cidadeId')
         .index()
         .notNullable()
+        .unsigned()
         .references('id')
         .inTable(ETableNames.cidade)
         .onUpdate('CASCADE')
