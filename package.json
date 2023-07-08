@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npx ts-node-dev ./src/index.ts",
     "postinstall": "tsc",
-    "production": "pm2 start ./build/index.js --name node-ts",
+    "server": "pm2 start ./build/index.js --name node-ts",
     "knex:rollback-all": "knex --knexfile ./src/Server/Database/Knex/Environment.ts migrate:rollback --all",
     "knex:rollback": "knex --knexfile ./src/Server/Database/Knex/Environment.ts migrate:rollback",
     "knex:migrate": "knex --knexfile ./src/Server/Database/Knex/Environment.ts migrate:latest",
