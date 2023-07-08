@@ -1,0 +1,51 @@
+
+Request: POST /cadastrar at Sat Jul 08 2023 09:33:17 GMT-0300, IP: ::1, User Agent: PostmanRuntime/7.32.3
+Request Body:
+{
+	"senha": "[FILTERED]",
+	"email": "[FILTERED]",
+	"nome": "maycon"
+}
+Response Body:
+{
+	"errors": {
+		"default": "Erro ao cadastrar o registro"
+	}
+}
+Response: 500 23.550 ms 
+
+Request: POST /cadastrar at Sat Jul 08 2023 09:33:42 GMT-0300, IP: ::1, User Agent: PostmanRuntime/7.32.3
+Request Body:
+{
+	"senha": "[FILTERED]",
+	"email": "[FILTERED]",
+	"nome": "maycon"
+}
+Response Body:
+2
+Response: 201 8.382 ms 
+
+Request: GET /cidades?page=1&limit=1&filter=%27%27&id=3 at Sat Jul 08 2023 09:34:11 GMT-0300, IP: ::1, User Agent: PostmanRuntime/7.32.3
+Response Body:
+[
+	{
+		"id": 3,
+		"nome": "Agudo"
+	}
+]
+Response: 200 4.618 ms 
+
+Request: POST /cadastrar at Sat Jul 08 2023 09:35:15 GMT-0300, IP: ::1, User Agent: PostmanRuntime/7.32.3
+Request Body:
+{
+	"senha": "[FILTERED]",
+	"email": "[FILTERED]",
+	"nome": "maycon"
+}
+Response Body:
+{
+	"errors": {
+		"default": "Erro ao cadastrar o registro"
+	}
+}
+Response: 500 2.642 ms 
