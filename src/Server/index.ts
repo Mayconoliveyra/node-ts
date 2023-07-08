@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import fs from 'fs';
 import moment from 'moment';
@@ -25,6 +26,12 @@ morgan(server, {
   filterParameters: ['senha', 'email', 'accessToken'],
 });
 
+/* Seta quais domínios pode fazer requisição. Se tiver [], sem restrição. */
+server.use(
+  cors({
+    origin: process.env.ENABLED_CORS?.split(';') || [],
+  }),
+);
 server.use(express.json());
 server.use(router);
 
