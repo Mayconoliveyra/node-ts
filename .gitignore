@@ -4,8 +4,10 @@ package-lock.json
 /build
 /coverage
 /dist
+/src/logs
 
 .env
 *.sqlite
-*.log
+
+
 
