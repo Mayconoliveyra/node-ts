@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 
 import { CidadesController } from '../Controllers/Cidades';
 import { PessoasController } from '../Controllers/Pessoas';
+import { UsuariosController } from '../Controllers/Usuarios';
 
 const router = Router();
 
@@ -19,5 +20,8 @@ router.post('/pessoas', PessoasController.createValidation, PessoasController.cr
 router.get('/pessoas/:id', PessoasController.getByIdValidation, PessoasController.getById);
 router.put('/pessoas/:id', PessoasController.updateByIdValidation, PessoasController.updateById);
 router.delete('/pessoas/:id', PessoasController.deleteByIdValidation, PessoasController.deleteById);
+
+router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn);
+router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp);
 
 export { router };
